@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+.box-1 {
+    background-color: lightcoral;
+    text-align: center;
+    color: white;
+    border: 3px solid lightskyblue;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.flex-container {
+    display: flex;
+    gap: 3px;
+    /* justify-content: center/end/space-between...; dit gaat over de verdeling van de left-over space (dus werkt enkel als er plaats over is in de parent, niet als er al shrinking gaande is)*/
+    /* flex-direction: column; */
+    /* dit definieert of er overflow op de volgende lijn mag zijn */
+    /* flex-wrap: wrap; */
+    /* dit zegt iets over de uitlijnen op de cross-axis (dus andere richting dan de flex-richting): */
+    /* align-items: center/start/...; */
+    align-items: center;
+}
+
+.flex-container div {
+    flex-grow: 0;
+    flex-shrink: 1;
+    /* flex-basis: definieert wat de basisbreedte is, vb. 100% wil zeggen dat het element heel de breedte van het parent element wil innemen. 0 wil zeggen dat het liefst de minimale breedte inneemt. dus als de minimale initiële breedte van element 1 breder is dan element 2, dan zal de volgende stap (shrink/grow) ook obv die initiële breedte zijn en krijg je dus elementen die niet even breed zijn.*/
+    flex-basis: auto;
+}
+
+.element-5 {
+    /* override align vd parent: */
+    align-self: flex-start;
+}
+
+div.voorbeeld-200px {
+    width: 200px;
+}
+
+div.voorbeeld-min {
+    width: min-content;
+}
+
+div.voorbeeld-max {
+    width: max-content;
+}
